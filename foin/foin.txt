@@ -1,0 +1,33 @@
+Cpanel (fundaprocolddhh.org)
+Plan de Hosting 	Hosting Emprendedor
+Mas información
+
+URL de acceso:
+	
+http://fundaprocolddhh.org/cpanel
+
+Si deseas acceder al Cpanel antes de registrar or redirigir tu dominio puedes acceder con la URL:
+
+https://147.135.84.19:2083/
+
+Nombre de Usuario:fundapro
+
+Contraseña: XtpNY[7h8A!c15
+
+Información Adicional
+Host de Servidor server37.rootservers.co - 147.135.84.19
+FTP 	fundaprocolddhh.org
+DNS 	ns1.imaginadw.com 198.50.152.66
+ns2.imaginadw.com 147.135.121.219
+
+______________________________________________________________________________________________________
+
+database:
+
+bd: fundapro_data
+user: fundapro_dbadmin
+pass: K(0UAP_hBORg
+
+bd: fundapro_data
+user: fundapro_user
+pass: }SNHN[&A5B@3
