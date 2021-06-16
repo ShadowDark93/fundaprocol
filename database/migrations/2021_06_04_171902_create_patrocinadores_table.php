@@ -19,7 +19,7 @@ class CreatePatrocinadoresTable extends Migration
             $table->string('url');
             $table->string('Telefono');
             $table->string('Direccion');
-            $table->longtext('Imagen');
+            $table->string('Imagen');
             $table->char('Estado')->default('1');
             $table->timestamps();
         });

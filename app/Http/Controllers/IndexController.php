@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Index;
+use App\Models\Patrocinadores;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -14,7 +15,18 @@ class IndexController extends Controller
      */
     public function index()
     {
-        //
+        return view('welcome');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function about()
+    {
+        $index = Index::FindOrFail(1);
+        //return view('about.index', compact('index'));
     }
 
     /**

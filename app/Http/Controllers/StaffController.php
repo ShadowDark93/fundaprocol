@@ -14,7 +14,9 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return view('staff.index');
+        $staff = Staff::all()->where('Estado','1');
+        return view('staff.index', compact('staff'));
+       //return $staff;
     }
 
     /**

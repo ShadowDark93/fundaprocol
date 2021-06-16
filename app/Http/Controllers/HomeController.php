@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Index;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $index = Index::all();
+        return $index;
+        //return view('home', compact('index'));
     }
+
 }

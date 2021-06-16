@@ -56,13 +56,13 @@
 
           <li class="dropdown"><a href="#"><span>Nosotros</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">Sobre Nosotros</a></li>
-              <li><a href="team.html">Equipo</a></li>
+              <li><a href="{{ route('about') }}">Sobre Nosotros</a></li>
+              <li><a href={{ route('staff') }}>Equipo</a></li>
             </ul>
           </li>
 
           <li><a href="services.html">Servicios</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contacto</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
