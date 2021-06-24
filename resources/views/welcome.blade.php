@@ -16,7 +16,7 @@
                             <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
                                 aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
                                 accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
+                            <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                             <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
                                 aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
                                 accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
+                            <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                             <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
                                 aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
                                 accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
+                            <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div>
                         </div>
                     </div>
                 </div>
@@ -70,31 +70,20 @@
 
                 <div class="row content">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <h2>Eum ipsam laborum deleniti velitena</h2>
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave
-                        </h3>
+                        <h2>La fundación protección Colombia de los Derechos Humanos</h2>
+                        <h4 align="justify">FUNDAPROCOL DDHH ejerce ejercicio de veeduría, de coadyuvancia, de intervención, de acompañamiento, de garantías de derechos, entre otros, en procesos que beneficien a la comunidad colombiana/ tolimense/ ibaguereña dentro de las cuales podemos indicar los espacios en los cuales participamos:</h6>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                            in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
-                        </p>
                         <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa
+                            <li><i class="ri-check-double-line"></i> Mesa Nacional Efectiva de víctimas como Organización Defensora de Víctimas.
                             </li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate
-                                velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in</li>
+                            <li><i class="ri-check-double-line"></i> Consejeros Territoriales de Paz/Convivencia/reconciliación del Tolima e Ibagué.</li>
+                            <li><i class="ri-check-double-line"></i> Veedurías ciudadanas</li>
+                            <li><i class="ri-check-double-line"></i> Acompañamiento permanente en manifestaciones pacíficas del orden nacional/departamental/municipal.</li>
+                            <li><i class="ri-check-double-line"></i> Integrantes de Fedecolpaz, red de derechos humanos del Tolima con incidencia nacional.</li>
+                            <li><i class="ri-check-double-line"></i> Convenios interadministrativos de trabajo/capacitación, sin costo alguno, con universidades/ entes de control.</li>
+                            <li><i class="ri-check-double-line"></i> Ciertos integrantes de fundaprocolddhh hacen parte de consejeros Territoriales de planeación, de estratificación, gremios, JAC, asojuntas, etc.</li>
                         </ul>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
                     </div>
                 </div>
 
@@ -102,7 +91,8 @@
         </section><!-- End About Us Section -->
 
         <!-- ======= Services Section ======= -->
-        <section id="services" class="services section-bg">
+        <!--
+            <section id="services" class="services section-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="row">
@@ -201,68 +191,26 @@
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section>
+        -->
+        <!-- ======= Services Section ======= -->
 
         <!-- ======= Our Patrocinadores Section ======= -->
         <section id="clients" class="clients">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Patrocinadores</h2>
+                    <h2>Colaboradores</h2>
                 </div>
 
                 <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
-
-                    <div class="col-lg-3 col-md-4 col-6">
+                    @foreach ($partner as $p)
+                        <div class="col-lg-3 col-md-4 col-6">
                         <div class="client-logo">
-                            <a href=""><img src="" class="img-fluid" alt=""></a>
+                            <a href="{{ $p->url }}"><img src="{{ $p->Imagen }}" class="img-fluid" alt="{{ $p->Nombre }}">{{ $p->nombre }}</a>
                         </div>
                     </div>
-
-                    <!--          <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                      <img src="img/clients/client-2.png" class="img-fluid" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                      <img src="img/clients/client-3.png" class="img-fluid" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                      <img src="img/clients/client-4.png" class="img-fluid" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                      <img src="img/clients/client-5.png" class="img-fluid" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                      <img src="img/clients/client-6.png" class="img-fluid" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                      <img src="img/clients/client-7.png" class="img-fluid" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                      <img src="img/clients/client-8.png" class="img-fluid" alt="">
-                    </div>
-                  </div>
-                -->
-
-
+                    @endforeach
                 </div>
             </div>
         </section>

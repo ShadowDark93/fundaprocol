@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Index;
-use App\Models\Patrocinadores;
+use App\Models\Legal;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class LegalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,19 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $partner = Patrocinadores::all()->where('Estado',1);
-        return view('welcome', compact('partner'));
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function about()
-    {
-        $index = Index::FindOrFail(1);
-        //return view('about.index', compact('index'));
+        //
     }
 
     /**
@@ -54,10 +41,10 @@ class IndexController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Index  $index
+     * @param  \App\Models\Legal  $legal
      * @return \Illuminate\Http\Response
      */
-    public function show(Index $index)
+    public function show(Legal $legal)
     {
         //
     }
@@ -65,10 +52,10 @@ class IndexController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Index  $index
+     * @param  \App\Models\Legal  $legal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Index $index)
+    public function edit(Legal $legal)
     {
         //
     }
@@ -77,10 +64,10 @@ class IndexController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Index  $index
+     * @param  \App\Models\Legal  $legal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Index $index)
+    public function update(Request $request, Legal $legal)
     {
         //
     }
@@ -88,10 +75,10 @@ class IndexController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Index  $index
+     * @param  \App\Models\Legal  $legal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Index $index)
+    public function destroy(Legal $legal)
     {
         //
     }
