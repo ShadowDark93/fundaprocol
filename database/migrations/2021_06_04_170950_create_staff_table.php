@@ -18,7 +18,7 @@ class CreateStaffTable extends Migration
             $table->string('Nombres');
             $table->string('Apellidos');
             $table->string('Cargo');
-            $table->string('Telefono');
+            $table->string('Telefono')->nullable();
             $table->string('Foto');
             $table->char('Estado')->default('1');
             $table->timestamps();

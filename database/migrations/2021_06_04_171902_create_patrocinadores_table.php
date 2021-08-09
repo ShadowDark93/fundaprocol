@@ -17,8 +17,8 @@ class CreatePatrocinadoresTable extends Migration
             $table->id();
             $table->string('Nombre');
             $table->string('url');
-            $table->string('Telefono');
-            $table->string('Direccion');
+            $table->string('Telefono')->nullable();
+            $table->string('Direccion')->nullable();
             $table->string('Imagen');
             $table->char('Estado')->default('1');
             $table->timestamps();

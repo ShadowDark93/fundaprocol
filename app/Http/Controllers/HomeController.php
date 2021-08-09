@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Index;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,9 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $auth = Auth();
         $index = Index::all();
-        return $index;
-        //return view('home', compact('index'));
+        return view('home', compact('index', 'auth'));
     }
 
 }

@@ -15,6 +15,8 @@ class CreateLegalsTable extends Migration
     {
         Schema::create('legals', function (Blueprint $table) {
             $table->id();
+            $table->string('File_name');
+            $table->text('uuid');
             $table->timestamps();
         });
     }

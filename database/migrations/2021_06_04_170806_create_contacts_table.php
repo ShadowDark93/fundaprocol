@@ -20,7 +20,7 @@ class CreateContactsTable extends Migration
             $table->string('Telefono');
             $table->string('Correo');
             $table->text('Descripcion');
-            $table->char('estado')->default('0');
+            $table->char('estado')->default('1');
             $table->timestamps();
         });
     }
