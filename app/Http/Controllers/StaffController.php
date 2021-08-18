@@ -16,7 +16,6 @@ class StaffController extends Controller
     {
         $staff = Staff::all()->where('Estado','1');
         return view('staff.index', compact('staff'));
-       //return $staff;
     }
 
     /**
@@ -26,7 +25,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        return view('staff.create');
     }
 
     /**
@@ -84,4 +83,5 @@ class StaffController extends Controller
     {
         //
     }
+
 }
