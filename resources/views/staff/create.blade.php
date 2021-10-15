@@ -1,4 +1,4 @@
-@extends('app.controller')
+@extends('layouts.plantilla')
 
 <br><br><br><br>
 

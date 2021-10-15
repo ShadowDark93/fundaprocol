@@ -22,6 +22,6 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('staff', [StaffController::class, 'index'])->name('staff');
+//Route::resource('staff', [StaffController::class])->names('staff');
 
 Route::get('about', [IndexController::class, 'about'])->name('about');
