@@ -9,14 +9,11 @@
             <div class="carousel-inner" role="listbox">
 
                 <!-- Slide 1 -->
-                <div class="carousel-item active" style="background-image: url(img/slide/slide-1.jpg);">
+                <div class="carousel-item active" style="background-image: url(https://cdn.pixabay.com/photo/2016/12/19/10/16/hands-1917895_960_720.png);">
                     <div class="carousel-container">
-                        <div class="carousel-content animate__animated animate__fadeInUp">
-                            <h2>Welcome to <span>Company</span></h2>
-                            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
-                                aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                                accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div>
+                        <div class="carousel-content animate__animated animate__fadeInUp text-center">
+                            <h2>Bienvenidos a <span>Fundaprocol DDHH</span></h2>
+                            <p>Somos una Organización sin ánimos de lucro que busca ayudar a la población civil.</p>
                         </div>
                     </div>
                 </div>
@@ -25,11 +22,9 @@
                 <div class="carousel-item" style="background-image: url(img/slide/slide-2.jpg);">
                     <div class="carousel-container">
                         <div class="carousel-content animate__animated animate__fadeInUp">
-                            <h2>Lorem Ipsum Dolor</h2>
-                            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
-                                aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                                accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div>
+                            <h2>Bienvenidos a <span>Fundaprocol DDHH</span></h2>
+                            <p>Mesa Nacional Efectiva de víctimas como Organización Defensora de Víctimas. .</p>
+                            {{-- <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div> --}}
                         </div>
                     </div>
                 </div>
@@ -38,11 +33,9 @@
                 <div class="carousel-item" style="background-image: url(img/slide/slide-3.jpg);">
                     <div class="carousel-container">
                         <div class="carousel-content animate__animated animate__fadeInUp">
-                            <h2>Sequi ea ut et est quaerat</h2>
-                            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
-                                aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                                accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div>
+                            <h2>Bienvenidos a <span>Fundaprocol DDHH</span></h2>
+                            <p>Consejeros Territoriales de Paz/Convivencia/reconciliación del Tolima e Ibagué.</p>
+                            {{-- <div class="text-center"><a href="" class="btn-get-started">Saber más</a></div> --}}
                         </div>
                     </div>
                 </div>
@@ -78,7 +71,7 @@
                             <li><i class="ri-check-double-line"></i> Mesa Nacional Efectiva de víctimas como Organización Defensora de Víctimas.
                             </li>
                             <li><i class="ri-check-double-line"></i> Consejeros Territoriales de Paz/Convivencia/reconciliación del Tolima e Ibagué.</li>
-                            <li><i class="ri-check-double-line"></i> Veedurías ciudadanas</li>
+                            <li><i class="ri-check-double-line"></i> Veedurías ciudadanas.</li>
                             <li><i class="ri-check-double-line"></i> Acompañamiento permanente en manifestaciones pacíficas del orden nacional/departamental/municipal.</li>
                             <li><i class="ri-check-double-line"></i> Integrantes de Fedecolpaz, red de derechos humanos del Tolima con incidencia nacional.</li>
                             <li><i class="ri-check-double-line"></i> Convenios interadministrativos de trabajo/capacitación, sin costo alguno, con universidades/ entes de control.</li>

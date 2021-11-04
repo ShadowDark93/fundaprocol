@@ -27,7 +27,7 @@ class IndexController extends Controller
     public function about()
     {
         $index = Index::FindOrFail(1);
-        //return view('about.index', compact('index'));
+        return view('about.index', compact('index'));
     }
 
     /**
