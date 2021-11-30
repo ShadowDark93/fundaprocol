@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLegalsTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateLegalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('legals', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->string('Doc');
-            $table->char('State')->default('1');
+            $table->string('Description');
+            $table->boolean('state')->default(true);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateLegalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('legals');
+        Schema::dropIfExists('services');
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -50,7 +50,8 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <a href="{{route('welcome')}}" class="logo me-auto me-lg-0"><img src="{{asset('img/favicon.png')}}" alt="" class="img-fluid"></a>
+            <a href="{{ route('welcome') }}" class="logo me-auto me-lg-0"><img src="{{ asset('img/favicon.png') }}"
+                    alt="" class="img-fluid"></a>
             <h1 class="logo me-auto"><a href="{{ route('welcome') }}"><span>FUNDAPROCOL</span> DDHH</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
 
@@ -66,8 +67,9 @@
                                 <li><a href={{ route('staff.index') }}>Equipo</a></li>
                             </ul>
                         </li>
-                        <li><a href="services.html">Servicios</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#partners">Colaboradores</a></li>
+                        <li><a href="#contact">Contacto</a></li>
                         <li class="dropdown"><a href="#"><span>Redes Sociales</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
@@ -93,38 +95,37 @@
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 @else
-                <ul>
-                    <li><a href="{{ route('welcome') }}">Inicio</a></li>
-                    <li><a href="#">Colaboradores</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a class="nav-link scrollto active" href="http://wa.me/573185572439" target="_blank">Soporte
-                            técnico</a></li>
+                    <ul>
+                        <li><a href="{{ route('home') }}">Inicio</a></li>
+                        <li><a href="#">Colaboradores</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a class="nav-link scrollto active" href="http://wa.me/573185572439" target="_blank">Soporte
+                                técnico</a></li>
 
-                    <li class="dropdown"><a href="#"><span>Intranet</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li class="nav-item dropdown">
-                                <div class="nav-link scrollto" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link scrollto" href="{{ route('home') }}">
-                                        {{ Auth::user()->name }}
-                                    </a>
-                                </div>
-                                <div class="nav-link scrollto" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link scrollto" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar sesion') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
+                        <li class="dropdown"><a href="#"><span>Intranet</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li class="nav-item dropdown">
+                                    <div class="nav-link scrollto" aria-labelledby="navbarDropdown">
+                                        <a class="nav-link scrollto" href="{{ route('home') }}">
+                                            {{ Auth::user()->name }}
+                                        </a>
+                                    </div>
+                                    <div class="nav-link scrollto" aria-labelledby="navbarDropdown">
+                                        <a class="nav-link scrollto" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                            {{ __('Cerrar sesion') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
                 @endguest
             </nav><!-- .navbar -->
 
@@ -183,7 +184,13 @@
     <script src="js/main.js"></script>
 
     <!-- Custom Footer -->
-    <script src="{{ asset('js/custom_footer.js') }}"></script>
+    <script>
+        if (screen.width > 800) {
+            var style = document.createElement('style');
+            document.body.appendChild(style);
+            style.sheet.insertRule('#custom_footer{bottom: 0; width: 100%; position:auto;}');
+        }
+    </script>
 
 </body>
 
