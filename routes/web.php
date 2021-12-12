@@ -28,6 +28,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('staff', StaffController::class)->names('staff');
 
 Route::resource('partners', PatrocinadoresController::class)->names('partners');
+Route::get('partner/{$id}/activar')->name('partners.activar');
 
 Route::resource('services', ServicesController::class)->names('services');
 

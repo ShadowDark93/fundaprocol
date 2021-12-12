@@ -14,7 +14,19 @@ class PatrocinadoresController extends Controller
      */
     public function index()
     {
-        return view('partners.index');
+        $patrocinadores = Patrocinadores::all();
+        return view('partners.index', compact('patrocinadores') );
+    }
+
+    public function activarPartner($id){
+        $partner = Patrocinadores::FindOrFail($id);
+        return $partner;
+
+    }
+
+    public function desactivarPartner($id){
+        $partner = Patrocinadores::FindOrFail($id);
+        return $partner;
     }
 
     /**

@@ -60,7 +60,7 @@
                     <ul>
                         <li><a href="{{ route('welcome') }}" class="active">Inicio</a></li>
 
-                        <li class="dropdown"><a href="{{ route('home') }}}}"><span>Nosotros</span> <i
+                        <li class="dropdown"><a href="{{ route('home') }}"><span>Nosotros</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="{{ route('about') }}">Sobre Nosotros</a></li>
@@ -70,7 +70,7 @@
                         <li><a href="#services">Servicios</a></li>
                         <li><a href="#partners">Colaboradores</a></li>
                         <li><a href="#contact">Contacto</a></li>
-                        <li class="dropdown"><a href="#"><span>Redes Sociales</span> <i
+                        <li class="dropdown"><a href=""><span>Redes Sociales</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="#" class="twitter"><i class="bu bi-twitter"> Twitter</i></a></li>
@@ -131,7 +131,7 @@
 
         </div>
     </header><!-- End Header -->
-
+    <br><br><br><br>
     @yield('content')
 
 
@@ -184,13 +184,8 @@
     <script src="js/main.js"></script>
 
     <!-- Custom Footer -->
-    <script>
-        if (screen.width > 800) {
-            var style = document.createElement('style');
-            document.body.appendChild(style);
-            style.sheet.insertRule('#custom_footer{bottom: 0; width: 100%; position:auto;}');
-        }
-    </script>
+    <script src="{{ asset('js/custom_footer.js') }}"></script>
+
 
 </body>
 
