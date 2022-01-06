@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.app')
 
 @section('content')
 
@@ -208,7 +208,10 @@
 
             </div>
         </section>
+        <br><br><br>
         <!-- Contact Section Ends -->
     </main><!-- End #main -->
 
 @endsection
+
+

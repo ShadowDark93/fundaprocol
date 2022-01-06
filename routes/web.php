@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\StaffController;
-use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\PatrocinadoresController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\DataController;
+use App\Http\Controllers\LegaleController;
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\StaffController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +21,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [IndexController::class, 'index'])->name('welcome');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('staff', StaffController::class)->names('staff');
+Route::resource('contactos', ContactoController::class)->names('contactos');
+Route::resource('data', DataController::class)->names('data')->middleware('auth');
+Route::resource('legales', LegaleController::class)->names('legales');
 
-Route::resource('partners', PatrocinadoresController::class)->names('partners');
-Route::get('partner/{$id}/activar')->name('partners.activar');
+Route::resource('partners', PartnerController::class)->names('partners')->middleware('auth');
+Route::get('partners/{id}/activar', [PartnerController::class, 'activar'])->name('partners.activar')->middleware('auth');
+Route::get('partners/{id}/desactivar', [PartnerController::class, 'desactivar'])->name('partners.desactivar')->middleware('auth');
 
-Route::resource('services', ServicesController::class)->names('services');
+Route::resource('servicios', ServicioController::class)->names('servicios');
 
-Route::get('about', [IndexController::class,'about'])->name('about');
+Route::resource('staff', StaffController::class)->names('staff')->middleware('auth');
+Route::get('staff/{id}/activar', [StaffController::class, 'activar'])->name('staff.activar')->middleware('auth');
+Route::get('staff/{id}/desactivar', [StaffController::class, 'desactivar'])->name('staff.desactivar')->middleware('auth');

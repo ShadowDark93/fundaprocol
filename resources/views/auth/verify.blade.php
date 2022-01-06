@@ -1,18 +1,4 @@
-@extends('layouts.plantilla')
-
-<style>
-    footer {
-        text-align: center;
-        font-family: sans-serif;
-        color: whitesmoke;
-        width: 100%;
-        bottom: 0;
-        position: fixed;
-    }
-
-</style>
-
-<br><br><br><br><br>
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -39,6 +25,4 @@
         </div>
     </div>
 </div>
-
-<br><br><br><br><br>
 @endsection

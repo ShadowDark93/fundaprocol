@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.app')
 
 <br><br><br><br>
 
@@ -35,11 +35,11 @@
 
                     <div class="col-sm-3">
                         <div class="card">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/12/15/07/buildings-984195_1280.jpg"
+                            <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_960_720.jpg"
                                 class="card-img-top" alt="...">
                             <div class="card-body justify-content-around align-items-center">
                                 <h5 class="card-title text-center">FUNDAPROCOL</h5>
-                                <a href="{{ route('partners.index') }}" class="btn btn-primary d-block mx-auto">ver</a>
+                                <a href="{{ route('data.index') }}" class="btn btn-primary d-block mx-auto">ver</a>
                             </div>
                         </div>
                     </div>
@@ -49,8 +49,8 @@
                             <img src="https://cdn.pixabay.com/photo/2018/08/10/15/39/email-3597088_1280.jpg"
                                 class="card-img-top" alt="...">
                             <div class="card-body justify-content-around align-items-center">
-                                <h5 class="card-title text-center">CONTACTO</h5>
-                                <a href="{{ route('partners.index') }}" class="btn btn-primary d-block mx-auto">ver</a>
+                                <h5 class="card-title text-center">CONTACTOS</h5>
+                                <a href="{{ route('contactos.index') }}" class="btn btn-primary d-block mx-auto">ver</a>
                             </div>
                         </div>
                     </div>
