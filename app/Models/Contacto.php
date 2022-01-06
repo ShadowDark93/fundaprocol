@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $Nombres
- * @property $Apellidos
- * @property $Telefono
+ * @property $Titulo
  * @property $Correo
  * @property $Descripcion
+ * @property $Respuesta
  * @property $estado
  * @property $created_at
  * @property $updated_at
@@ -22,14 +22,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Contacto extends Model
 {
-    
+
     static $rules = [
-		'Nombres' => 'required',
+		/* 'Nombres' => 'required',
 		'Apellidos' => 'required',
-		'Telefono' => 'required',
+		'Titulo' => 'required',
 		'Correo' => 'required',
-		'Descripcion' => 'required',
-		'estado' => 'required',
+		'Descripcion' => 'required', */
     ];
 
     protected $perPage = 20;
@@ -39,7 +38,7 @@ class Contacto extends Model
      *
      * @var array
      */
-    protected $fillable = ['Nombres','Apellidos','Telefono','Correo','Descripcion','estado'];
+    protected $fillable = ['Nombres','Titulo','Correo','Descripcion','Respuesta','estado'];
 
 
 

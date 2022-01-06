@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('staff-public', [IndexController::class, 'staffPublic'])->name('index.staff');
+Route::get('about-public', [IndexController::class, 'aboutPublic'])->name('index.about');
 
 Auth::routes();
 
@@ -35,7 +37,10 @@ Route::resource('partners', PartnerController::class)->names('partners')->middle
 Route::get('partners/{id}/activar', [PartnerController::class, 'activar'])->name('partners.activar')->middleware('auth');
 Route::get('partners/{id}/desactivar', [PartnerController::class, 'desactivar'])->name('partners.desactivar')->middleware('auth');
 
-Route::resource('servicios', ServicioController::class)->names('servicios');
+Route::resource('servicios', ServicioController::class)->names('servicios')->middleware('auth');
+Route::get('servicios/{id}/activar', [ServicioController::class, 'activar'])->name('servicios.activar')->middleware('auth');
+Route::get('servicios/{id}/desactivar', [ServicioController::class, 'desactivar'])->name('servicios.desactivar')->middleware('auth');
+
 
 Route::resource('staff', StaffController::class)->names('staff')->middleware('auth');
 Route::get('staff/{id}/activar', [StaffController::class, 'activar'])->name('staff.activar')->middleware('auth');

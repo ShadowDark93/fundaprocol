@@ -35,6 +35,28 @@ class ServicioController extends Controller
         return view('servicio.create', compact('servicio'));
     }
 
+    public function activar($id)
+    {
+        $servicio = Servicio::find($id);
+        if (isset($servicio)) {
+            $servicio->state = 1;
+            $servicio->save();
+            return redirect()->route('servicios.index')
+                ->with('success', 'Servicio correctamente actualizado.');
+        }
+    }
+
+    public function desactivar($id)
+    {
+        $servicio = Servicio::find($id);
+        if (isset($servicio)) {
+            $servicio->state = 0;
+            $servicio->save();
+            return redirect()->route('servicios.index')
+                ->with('success', 'Servicio correctamente actualizado.');
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      *

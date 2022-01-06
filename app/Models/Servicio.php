@@ -19,11 +19,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Servicio extends Model
 {
-    
+
     static $rules = [
 		'Name' => 'required',
 		'Description' => 'required',
-		'state' => 'required',
     ];
 
     protected $perPage = 20;

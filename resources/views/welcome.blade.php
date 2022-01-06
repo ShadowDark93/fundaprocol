@@ -9,8 +9,7 @@
             <div class="carousel-inner" role="listbox">
 
                 <!-- Slide 1 -->
-                <div class="carousel-item active"
-                    style="background-image: url(img/fondo.png);">
+                <div class="carousel-item active" style="background-image: url(img/fondo.png);">
                     <div class="carousel-container">
                         <div class="carousel-content animate__animated animate__fadeInUp text-center">
                             <h2>Bienvenidos a <span>Fundaprocol DDHH</span></h2>
@@ -20,7 +19,8 @@
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="carousel-item" style="background-image: url(https://cdn.pixabay.com/photo/2016/12/19/10/16/hands-1917895_960_720.png);">
+                <div class="carousel-item"
+                    style="background-image: url(https://cdn.pixabay.com/photo/2016/12/19/10/16/hands-1917895_960_720.png);">
                     <div class="carousel-container">
                         <div class="carousel-content animate__animated animate__fadeInUp">
                             <h2>Bienvenidos a <span>Fundaprocol DDHH</span></h2>
@@ -104,23 +104,18 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box iconbox-blue">
-                            <div class="icon">
-                                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                                        d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174">
-                                    </path>
-                                </svg>
-                                <i class="bx bxl-dribbble"></i>
+                    @foreach ($servicios as $servicio)
+                        <div class="col-sm-3" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="card" style="width:18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center" style="color: rgb(33, 204, 56); text-transform: uppercase;">{{ $servicio->Name }}</h5>
+                                    <p class="card-text">{{ $servicio->Description }}</p>
+                                </div>
                             </div>
-                            <h4><a href="">Lorem Ipsum</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                         </div>
-                    </div>
-
+                    @endforeach
                 </div>
-
+            </div>
             </div>
         </section>
 
@@ -141,6 +136,7 @@
                                 <a href="{{ $p->url }}"><img src="{{ $p->Imagen }}" class="img-fluid"
                                         alt="{{ $p->Nombre }}">{{ $p->nombre }}</a>
                             </div>
+                            <p class="text-center">{{ $p->Nombre }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -162,14 +158,15 @@
                             <div class="row">
                                 <div class="col-lg-6 info mt-4 mt-lg-0">
                                     <i class="bi bi-envelope"></i>
-                                    <h4>Email:</h4>
-                                    <p>info@example.com<br>contact@example.com</p>
+                                    <h4>Correo:</h4>
+                                    <a href="mailto:{{ $data->Correo }}">{{ $data->Correo }}</a>
+                                    {{-- <p>info@example.com<br>contact@example.com</p> --}}
                                 </div>
 
                                 <div class="col-lg-6 info mt-4 mt-lg-0">
                                     <i class="bi bi-phone"></i>
-                                    <h4>Call:</h4>
-                                    <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+                                    <h4>Teléfono:</h4>
+                                    <a href="tel:{{ $data->Cel }}">{{ $data->Cel }}</a>
                                 </div>
                             </div>
                         </div>
@@ -183,24 +180,36 @@
                         <h2>Cuéntanos tu caso</h2>
                     </div>
                     <div class="col-lg-10">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form method="POST" action="{{ route('contactos.store') }}" role="form">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombres"
-                                        required="">
+                                    {{ Form::label('Nombres') }}
+                                    {{ Form::text('Nombres', '', ['class' => 'form-control' . ($errors->has('Nombres') ? ' is-invalid' : ''), 'placeholder' => 'Nombres', 'required'=>""]) }}
+                                    {!! $errors->first('Nombres', '<div class="invalid-feedback">:message</p>') !!}
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Correo">
+                                    {{ Form::label('Correo') }}
+                                    {{ Form::email('Correo', '', ['class' => 'form-control' . ($errors->has('Correo') ? ' is-invalid' : ''), 'placeholder' => 'Correo', 'required'=>""]) }}
+                                    {!! $errors->first('Correo', '<div class="invalid-feedback">:message</p>') !!}
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Título">
+                                {{ Form::label('Titulo') }}
+                                {{ Form::text('Titulo', '', ['class' => 'form-control' . ($errors->has('Titulo') ? ' is-invalid' : ''), 'placeholder' => 'Titulo', 'required'=>""]) }}
+                                {!! $errors->first('Titulo', '<div class="invalid-feedback">:message</p>') !!}
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Mensaje detallado"
-                                    required=""></textarea>
+                                <div class="form-group">
+                                    {{ Form::label('Descripcion') }}
+                                    {{ Form::textarea('Descripcion', '', ['class' => 'form-control' . ($errors->has('Descripcion') ? ' is-invalid' : ''), 'rows' => '5', 'placeholder' => 'Descripcion', 'required'=>""]) }}
+                                    {!! $errors->first('Descripcion', '<div class="invalid-feedback">:message</p>') !!}
+                                </div>
                             </div>
-                            <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
+                            <br>
+                            <div class=" text-center"><button class="btn btn-success text-center" type="submit">Enviar Mensaje</button></div>
+
+                            {{-- <button type="submit" class="btn btn-success text-center">Enviar Mensaje</button> --}}
                         </form>
                     </div>
 
@@ -213,5 +222,3 @@
     </main><!-- End #main -->
 
 @endsection
-
-

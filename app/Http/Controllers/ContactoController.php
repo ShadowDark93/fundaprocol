@@ -43,11 +43,17 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Contacto::$rules);
+        request()->validate([
+            'Nombres' => 'required',
+            'Apellidos' => 'required',
+            'Titulo' => 'required',
+            'Correo' => 'required',
+            'Descripcion' => 'required',
+        ]);
 
         $contacto = Contacto::create($request->all());
 
-        return redirect()->route('contactos.index')
+        return redirect()->route('index')
             ->with('success', 'Contacto created successfully.');
     }
 
@@ -88,10 +94,18 @@ class ContactoController extends Controller
     {
         request()->validate(Contacto::$rules);
 
-        $contacto->update($request->all());
+        $contacto= Contacto::find($contacto->id);
 
-        return redirect()->route('contactos.index')
-            ->with('success', 'Contacto updated successfully');
+        if (isset($contacto)) {
+            $contacto->Respuesta = $request->get('Respuesta');
+            $contacto->estado = 0;
+            $contacto->save();
+
+            return redirect()->route('contactos.index')
+                ->with('success', 'Respuesta realizada');
+
+        }
+
     }
 
     /**

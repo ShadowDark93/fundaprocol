@@ -19,14 +19,10 @@
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Nombres:</strong>
                             {{ $contacto->Nombres }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Apellidos:</strong>
-                            {{ $contacto->Apellidos }}
                         </div>
                         <div class="form-group">
                             <strong>Telefono:</strong>
@@ -42,7 +38,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $contacto->estado }}
+                            @if ($contacto->estado==1)
+                                Sin respuesta
+                            @else
+                                Respondido
+                            @endif
                         </div>
 
                     </div>

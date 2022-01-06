@@ -63,13 +63,13 @@
                         <li class="dropdown"><a href="{{ route('home') }}"><span>Nosotros</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">Sobre Nosotros</a></li>
-                                <li><a href={{ route('staff.index') }}>Equipo</a></li>
+                                <li><a href={{ route('index.about') }}>Sobre Nosotros</a></li>
+                                <li><a href={{ route('index.staff') }}>Equipo</a></li>
                             </ul>
                         </li>
-                        <li><a href="#services">Servicios</a></li>
-                        <li><a href="#partners">Colaboradores</a></li>
-                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="/#services">Servicios</a></li>
+                        <li><a href="/#partners">Colaboradores</a></li>
+                        <li><a href="/#contact">Contacto</a></li>
                         <li class="dropdown"><a href=""><span>Redes Sociales</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>

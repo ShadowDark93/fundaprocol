@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -13,14 +13,15 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Servicio') }}
+                                {{ __('Servicios Ofrecidos') }}
                             </span>
 
-                             <div class="float-right">
-                                <a href="{{ route('servicios.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                            <div class="float-right">
+                                <a href="{{ route('servicios.create') }}" class="btn btn-success btn-sm float-right"
+                                    data-placement="left">
+                                    {{ __('Crear Servicio') }}
                                 </a>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -35,10 +36,10 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Name</th>
-										<th>Description</th>
-										<th>State</th>
+
+                                        <th>Nombres</th>
+                                        <th>Descripción</th>
+                                        <th>Estado</th>
 
                                         <th></th>
                                     </tr>
@@ -47,19 +48,33 @@
                                     @foreach ($servicios as $servicio)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $servicio->Name }}</td>
-											<td>{{ $servicio->Description }}</td>
-											<td>{{ $servicio->state }}</td>
+
+                                            <td>{{ $servicio->Name }}</td>
+                                            <td>{{ $servicio->Description }}</td>
+                                            <td>
+                                                @if ($servicio->state == 1)
+                                                    Activo
+                                                @else
+                                                    Inactivo
+                                                @endif
+                                            </td>
 
                                             <td>
-                                                <form action="{{ route('servicios.destroy',$servicio->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('servicios.show',$servicio->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('servicios.edit',$servicio->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
+
+                                                @if ($servicio->state == 1)
+                                                    <a class="btn btn-sm btn-danger"
+                                                        href="{{ route('servicios.desactivar', $servicio->id) }}"><i
+                                                            class="fa fa-fw fa-edit"></i> Desactivar</a>
+                                                @else
+                                                    <a class="btn btn-sm btn-success"
+                                                        href="{{ route('servicios.activar', $servicio->id) }}"><i
+                                                            class="fa fa-fw fa-edit"></i> Activar</a>
+                                                @endif
+                                                <a class="btn btn-sm btn-warning"
+                                                    href="{{ route('servicios.edit', $servicio->id) }}"><i
+                                                        class="fa fa-fw fa-edit"></i> Editar</a>
+
+
                                             </td>
                                         </tr>
                                     @endforeach
