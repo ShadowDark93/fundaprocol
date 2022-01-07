@@ -21,11 +21,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Auth::routes();
+
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('staff-public', [IndexController::class, 'staffPublic'])->name('index.staff');
 Route::get('about-public', [IndexController::class, 'aboutPublic'])->name('index.about');
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
