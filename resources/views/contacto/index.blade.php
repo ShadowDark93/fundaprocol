@@ -13,15 +13,8 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Contacto') }}
+                                {{ __('Contacto Externo') }}
                             </span>
-
-                            <div class="float-right">
-                                <a href="{{ route('contactos.create') }}" class="btn btn-primary btn-sm float-right"
-                                    data-placement="left">
-                                    {{ __('Create New') }}
-                                </a>
-                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -53,12 +46,15 @@
                                             <td>{{ ++$i }}</td>
 
                                             <td>
+                                                @if ($contacto->estado == 1)
+                                                    <a class="btn btn-sm btn-outline-success"
+                                                        href="{{ route('contactos.edit', $contacto->id) }}"><i
+                                                            class="fa fa-fw fa-edit"></i> Responder</a>
+                                                @endif
                                                 <a class="btn btn-sm btn-primary "
                                                     href="{{ route('contactos.show', $contacto->id) }}"><i
                                                         class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                <a class="btn btn-sm btn-outline-success"
-                                                    href="{{ route('contactos.edit', $contacto->id) }}"><i
-                                                        class="fa fa-fw fa-edit"></i> Responder</a>
+
                                             </td>
 
                                             <td>{{ $contacto->Nombres }}</td>

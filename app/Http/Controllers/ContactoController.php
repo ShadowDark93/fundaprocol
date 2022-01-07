@@ -45,7 +45,6 @@ class ContactoController extends Controller
     {
         request()->validate([
             'Nombres' => 'required',
-            'Apellidos' => 'required',
             'Titulo' => 'required',
             'Correo' => 'required',
             'Descripcion' => 'required',

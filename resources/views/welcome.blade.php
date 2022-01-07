@@ -101,7 +101,7 @@
                     <h2>REDES SOCIALES</h2>
                 </div>
 
-                <div class="row">
+                <div class="row" align="center">
                     @if (isset($data->Facebook))
                         <div class="col-sm-1 card-body">
                             <a href="{{ $data->Facebook }}" class="text-center" target="_blank"><img
