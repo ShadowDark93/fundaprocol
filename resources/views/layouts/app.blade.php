@@ -19,7 +19,8 @@
         rel="stylesheet">
 
     <!-- AdSense -->
-    <script data-ad-client="ca-pub-4588741894951441" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script data-ad-client="ca-pub-4234914330361914" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
     <!-- Vendor CSS Files -->
@@ -69,14 +70,7 @@
                         <li><a href="/#services">Servicios</a></li>
                         <li><a href="/#partners">Colaboradores</a></li>
                         <li><a href="/#contact">Contacto</a></li>
-                        <li class="dropdown"><a href=""><span>Redes Sociales</span> <i
-                                    class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="{{ $data->Twitter }}" class="twitter" target="_blank"><i class="bu bi-twitter"> Twitter</i></a></li>
-                                <li><a href="{{ $data->Facebook }}" class="facebook" target="_blank"><i class="bu bi-facebook"> Facebook</i></a></li>
-                                <li><a href="{{ $data->Instagram }}" class="instagram" target="_blank"><i class="bu bi-instagram"> Instagram</i></a></li>
-                                <li><a href="{{ $data->Linkedin }}" class="linkedin" target="_blank"><i class="bu bi-linkedin"> Linkedin</i></a></li>
-                            </ul>
+                        <li class="dropdown"><a href="/#social-networks"><span>Redes Sociales</span></a>
                         </li>
                         <li class="dropdown"><a href="#"><span>Intranet</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>

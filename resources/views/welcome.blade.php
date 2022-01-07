@@ -94,6 +94,60 @@
             </div>
         </section><!-- End About Us Section -->
 
+        <section id="social-networks" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>REDES SOCIALES</h2>
+                </div>
+
+                <div class="row">
+                    @if (isset($data->Facebook))
+                        <div class="col-sm-1 card-body">
+                            <a href="{{ $data->Facebook }}" class="text-center" target="_blank"><img
+                                    src="https://img.icons8.com/color/100/000000/facebook.png" /></a>
+                        </div>
+                    @endif
+
+                    @if (isset($data->Twitter))
+                        <div class="col-sm-1 card-body">
+                            <a href="{{ $data->Twitter }}" class="text-center" target="_blank"><img
+                                    src="https://img.icons8.com/color/100/000000/twitter--v2.png" /></a>
+                        </div>
+                    @endif
+
+                    @if (isset($data->Instagram))
+                        <div class="col-sm-1 card-body">
+                            <a href="{{ $data->Instagram }}" class="text-center" target="_blank"><img
+                                    src="https://img.icons8.com/cute-clipart/100/000000/instagram-new.png" /></a>
+                        </div>
+                    @endif
+
+                    @if (isset($data->Linkedin))
+                        <div class="col-sm-1 card-body">
+                            <a href="{{ $data->Linkedin }}" class="text-center" target="_blank"><img
+                                    src="https://img.icons8.com/fluency/100/000000/linkedin.png" /></a>
+                        </div>
+                    @endif
+
+                    @if (isset($data->Instagram))
+                        <div class="col-sm-1 card-body">
+                            <a href="{{ $data->Instagram }}" class="text-center" target="_blank"><img
+                                    src="https://img.icons8.com/fluency/100/000000/youtube.png" /></a>
+                        </div>
+                    @endif
+
+                    @if (isset($data->Cel))
+                        <div class="col-sm-1 card-body">
+                            <a href="http://wa.me/57{{ $data->Cel }}" class="text-center" target="_blank"><img
+                                    src="https://img.icons8.com/fluency/100/000000/whatsapp.png" /></a>
+                        </div>
+                    @endif
+
+                </div>
+            </div>
+        </section>
+
         <!-- ======= Services Section ======= -->
 
         <section id="services" class="services section-bg">
@@ -108,14 +162,15 @@
                         <div class="col-sm-3" data-aos="zoom-in" data-aos-delay="100">
                             <div class="card" style="width:18rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title text-center" style="color: rgb(33, 204, 56); text-transform: uppercase;">{{ $servicio->Name }}</h5>
+                                    <h5 class="card-title text-center"
+                                        style="color: rgb(33, 204, 56); text-transform: uppercase;">{{ $servicio->Name }}
+                                    </h5>
                                     <p class="card-text">{{ $servicio->Description }}</p>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-            </div>
             </div>
         </section>
 
@@ -180,41 +235,41 @@
                         <h2>Cuéntanos tu caso</h2>
                     </div>
                     <div class="col-lg-10">
-                        <form method="POST" action="{{ route('contactos.store') }}" role="form">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    {{ Form::label('Nombres') }}
-                                    {{ Form::text('Nombres', '', ['class' => 'form-control' . ($errors->has('Nombres') ? ' is-invalid' : ''), 'placeholder' => 'Nombres', 'required'=>""]) }}
-                                    {!! $errors->first('Nombres', '<div class="invalid-feedback">:message</p>') !!}
+                        <div class="info-wrap">
+                            <form method="POST" action="{{ route('contactos.store') }}" role="form">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        {{ Form::label('Nombres') }}
+                                        {{ Form::text('Nombres', '', ['class' => 'form-control' . ($errors->has('Nombres') ? ' is-invalid' : ''), 'placeholder' => 'Nombres', 'required' => '']) }}
+                                        {!! $errors->first('Nombres', '<div class="invalid-feedback">:message</p>') !!}
+                                    </div>
+                                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                                        {{ Form::label('Correo') }}
+                                        {{ Form::email('Correo', '', ['class' => 'form-control' . ($errors->has('Correo') ? ' is-invalid' : ''), 'placeholder' => 'Correo', 'required' => '']) }}
+                                        {!! $errors->first('Correo', '<div class="invalid-feedback">:message</p>') !!}
+                                    </div>
                                 </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    {{ Form::label('Correo') }}
-                                    {{ Form::email('Correo', '', ['class' => 'form-control' . ($errors->has('Correo') ? ' is-invalid' : ''), 'placeholder' => 'Correo', 'required'=>""]) }}
-                                    {!! $errors->first('Correo', '<div class="invalid-feedback">:message</p>') !!}
+                                <div class="form-group mt-3">
+                                    {{ Form::label('Titulo') }}
+                                    {{ Form::text('Titulo', '', ['class' => 'form-control' . ($errors->has('Titulo') ? ' is-invalid' : ''), 'placeholder' => 'Titulo', 'required' => '']) }}
+                                    {!! $errors->first('Titulo', '<div class="invalid-feedback">:message</p>') !!}
                                 </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                {{ Form::label('Titulo') }}
-                                {{ Form::text('Titulo', '', ['class' => 'form-control' . ($errors->has('Titulo') ? ' is-invalid' : ''), 'placeholder' => 'Titulo', 'required'=>""]) }}
-                                {!! $errors->first('Titulo', '<div class="invalid-feedback">:message</p>') !!}
-                            </div>
-                            <div class="form-group mt-3">
-                                <div class="form-group">
-                                    {{ Form::label('Descripcion') }}
-                                    {{ Form::textarea('Descripcion', '', ['class' => 'form-control' . ($errors->has('Descripcion') ? ' is-invalid' : ''), 'rows' => '5', 'placeholder' => 'Descripcion', 'required'=>""]) }}
-                                    {!! $errors->first('Descripcion', '<div class="invalid-feedback">:message</p>') !!}
+                                <div class="form-group mt-3">
+                                    <div class="form-group">
+                                        {{ Form::label('Descripcion') }}
+                                        {{ Form::textarea('Descripcion', '', ['class' => 'form-control' . ($errors->has('Descripcion') ? ' is-invalid' : ''), 'rows' => '5', 'placeholder' => 'Descripcion', 'required' => '']) }}
+                                        {!! $errors->first('Descripcion', '<div class="invalid-feedback">:message</p>') !!}
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class=" text-center"><button class="btn btn-success text-center" type="submit">Enviar Mensaje</button></div>
-
-                            {{-- <button type="submit" class="btn btn-success text-center">Enviar Mensaje</button> --}}
-                        </form>
+                                <br>
+                                <div class=" text-center"><button class="btn btn-success text-center" type="submit">Enviar
+                                        Mensaje</button></div>
+                            </form>
+                        </div>
                     </div>
 
                 </div>
-
             </div>
         </section>
         <br><br><br>
