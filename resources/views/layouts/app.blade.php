@@ -72,7 +72,7 @@
                         <li><a href="/#contact">Contacto</a></li>
                         <li class="dropdown"><a href="/#social-networks"><span>Redes Sociales</span></a>
                         </li>
-                        <li class="dropdown"><a href="#"><span>Intranet</span> <i class="bi bi-chevron-down"></i></a>
+                        <li><a href="#"><span>Intranet</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                                 @if (Route::has('login'))
                                     <div class="nav-link scrollto">
@@ -153,7 +153,7 @@
 
                 </div>
             </div>
-            
+
         </div>
     </footer><!-- End Footer -->
 
